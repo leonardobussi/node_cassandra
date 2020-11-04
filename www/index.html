@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example NodeJS with Apache Cassandra</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/front.js"></script>
+</head>
+<body>
+<h1>Lista de contato</h1>
+<p><a id="add" href="#">Click aqui<a/>Para adicionar mais contatos</p>
+<form method="post" action="/contato">
+    <label for="email">Email:</label>
+    <input type="text" name="email">
+
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome">
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" name="telefone">
+
+    <input type="submit" value="Save">
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Ação</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+</table>
+</body>
+</html>

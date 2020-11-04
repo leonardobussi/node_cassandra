@@ -1,0 +1,10 @@
+{
+    "name": "node_cassandra",
+    "description": "projetinho da aula de noSQL com o cassandra",
+    "version": "0.0.1",
+    "author": "Leonardo, Pedro e Raisler",
+    "dependencies": {
+        "express": ">= 3.4.7",
+        "helenus": ">= 0.6.8"
+    }
+}
