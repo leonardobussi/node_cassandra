@@ -1,47 +1,47 @@
 module.exports = {
-	InserirContato : function (req, res, pool){
+	Inserirdisciplinas : function (req, res, pool){
 		pool.connect(function(err, keyspace){
 		    if(err){
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-				pool.cql("INSERT INTO contato (email, nome, telefone) VALUES (?,?,?,?,?)", [post.email, post.nome, post.telefone], function(err, results){
+				pool.cql("INSERT INTO disciplinas (id , nome, professor) VALUES (?,?,?,?,?)", [post.id, post.nome, post.professor], function(err, results){
 					res.redirect('/');
 				});
 		    }
 		});
 	},
-	AtualizarContato : function (req, res, pool){
+	Atualizardisciplinas : function (req, res, pool){
 		pool.connect(function(err, keyspace){
 		    if(err){
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-				pool.cql("UPDATE contato SET nome = ?, telefone = ?  WHERE email = ?", [post.nome, post.telefone, post.contatoEdit], function(err, results){
+				pool.cql("UPDATE disciplinas SET professor = ?  WHERE nome = ?", [post.professor, post.nome], function(err, results){
 					res.redirect('/');
 				});
 		    }
 		});
 	},
-	DeletaContato : function (req, res, pool){
+	Deletadisciplinas : function (req, res, pool){
 		pool.connect(function(err, keyspace){
 		    if(err){
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-				pool.cql("DELETE FROM contato WHERE email = ?", [post.contatoDel], function(err, results){
+				pool.cql("DELETE FROM disciplinas WHERE email = ?", [post.disciplinasDel], function(err, results){
 					res.redirect('/');
 				});
 		    }
 		});
 	},
-	CarregaContato : function (req, res, pool){
+	Carregadisciplinas : function (req, res, pool){
 		pool.connect(function(err, keyspace){
 		    if(err){
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-		    	var query = "SELECT * FROM contato";
+		    	var query = "SELECT * FROM disciplinas";
 		    	if(typeof(req.query.email) != "undefined"){
 		    		query += " WHERE email = '"+req.query.email+"'";
 		    	}
