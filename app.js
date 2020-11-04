@@ -1,14 +1,20 @@
 var express = require('express');
 var fs = require('fs');
-var helenus = require('helenus');
- var cassandra = require('cassandra-driver')
+//var helenus = require('helenus');
+var cassandra = require('cassandra-driver')
 
-// var actions = require('./actions');
+var actions = require('./actions');
 // var pool = new helenus.ConnectionPool({
-// 	hosts      : ['localhost:9042'],
-// 	keyspace   : 'disciplinas',
-// 	timeout    : 3000
-// }); 
+//  	hosts      : ['localhost:9042'],
+//  	keyspace   : 'disciplinas',
+//  	timeout    : 3000
+//  }); 
+
+var pool = new cassandra.Client({
+	contactPoints: ['h1', 'h2'],
+	localDataCenter: 'datacenter1',
+	keyspace: 'disciplinas'
+  });
 
 
 // pool.on('error', function(err){

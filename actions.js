@@ -32,7 +32,7 @@ module.exports = {
 				pool.cql("DELETE FROM disciplinas WHERE nome = ?", [post.disciplinasDel], function(err, results){
 					res.redirect('/');
 				});
-		    }
+		    }y
 		});
 	},
 	Carregadisciplinas : function (req, res, pool){
