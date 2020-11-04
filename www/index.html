@@ -10,24 +10,24 @@
 <h1>Lista de contato</h1>
 <p><a id="add" href="#">Click aqui<a/>Para adicionar mais contatos</p>
 <form method="post" action="/contato">
-    <label for="email">Email:</label>
-    <input type="text" name="email">
+
+    <label for="id">id:</label>
+    <input type="text" name="id">
+
+    <label for="professor">Professor:</label>
+    <input type="text" name="professor">
 
     <label for="nome">Nome:</label>
     <input type="text" name="nome">
-
-    <label for="telefone">Telefone:</label>
-    <input type="text" name="telefone">
 
     <input type="submit" value="Save">
 </form>
 <table>
     <thead>
         <tr>
-            <th>Ação</th>
+            <th>Disciplina</th>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
+            <th>Professor</th>
         </tr>
     </thead>
     <tbody>

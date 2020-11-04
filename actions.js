@@ -5,7 +5,7 @@ module.exports = {
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-				pool.cql("INSERT INTO disciplinas (id , nome, professor) VALUES (?,?,?,?,?)", [post.id, post.nome, post.professor], function(err, results){
+				pool.cql("INSERT INTO disciplinas (nome, professor) VALUES (?,?,?,?,?)", [post.nome, post.professor], function(err, results){
 					res.redirect('/');
 				});
 		    }
@@ -29,7 +29,7 @@ module.exports = {
 		    	throw(err);
 		    } else {
 		    	var post = req.body;
-				pool.cql("DELETE FROM disciplinas WHERE email = ?", [post.disciplinasDel], function(err, results){
+				pool.cql("DELETE FROM disciplinas WHERE nome = ?", [post.disciplinasDel], function(err, results){
 					res.redirect('/');
 				});
 		    }
@@ -42,8 +42,8 @@ module.exports = {
 		    } else {
 		    	var post = req.body;
 		    	var query = "SELECT * FROM disciplinas";
-		    	if(typeof(req.query.email) != "undefined"){
-		    		query += " WHERE email = '"+req.query.email+"'";
+		    	if(typeof(req.query.nome) != "undefined"){
+		    		query += " WHERE nome = '"+req.query.nome+"'";
 		    	}
 				pool.cql(query, [], function(err, results){
 					var data = [];
